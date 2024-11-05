@@ -64,7 +64,7 @@ export const App = () => {
   const [sortGood, setSortGood] = useState<SortType>(SortType.NONE);
   const [isReversed, setIsReversed] = useState(false);
 
-  const preparatedGoods = getPreparedGoods({
+  const preparedGoods = getPreparedGoods({
     goods: goodsFromServer,
     sortGood,
     isReversed,
@@ -126,8 +126,8 @@ export const App = () => {
       </div>
 
       <ul>
-        {preparatedGoods.map((good, index) => (
-          <li key={index} data-cy="Good">
+        {preparedGoods.map(good => (
+          <li key={good} data-cy="Good">
             {good}
           </li>
         ))}
